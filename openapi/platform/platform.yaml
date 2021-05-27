@@ -823,9 +823,21 @@ components:
                   maxLength: 2
                   minLength: 2
                   example: CA
-                  description: The two letter state code within the country
+                  description: 'Deprecated: The two letter state code within the country. Use the regionCode which uses standard values.'
+                  deprecated: true
                 zip:
                   type: string
+                  deprecated: true
+                  description: This field has been renamed `postalCode` to align with industry standards. The behaviour is the same.
+                postalCode:
+                  type: string
+                  description: The zip code or postal code component of an address.
+                regionCode:
+                  type: string
+                  maxLength: 3
+                  minLength: 1
+                  example: CA
+                  description: 'The code for the top level subdivision within the country (state/province) as defined by ISO 3166-2 format (CA-SK, US-FL, AG-08, AU-NSW)'
                 countryCode:
                   type: string
                   maxLength: 2
